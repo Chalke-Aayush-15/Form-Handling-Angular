@@ -24,6 +24,11 @@
         <label for="">Enter Password: </label>
         <input type="password" name="password" formControlName="password">
         
+        <div *ngIf="userForm.get('password') ?.invalid && userForm.get('password') ?.touched ">
+            <p *ngIf="userForm.get('password')?.errors?.['required']"> Password Is Required </p>
+            <p *ngIf="userForm.get('password')?.errors?.['commonPassword']">This is Commonly used password</p>
+        </div>
+
         <br>
         
         <input type="submit" [disabled]="userForm">

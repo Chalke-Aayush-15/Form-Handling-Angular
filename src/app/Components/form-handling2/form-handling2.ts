@@ -32,7 +32,7 @@ export class FormHandling2 {
     this.userForm = this.formBuilder.group({
       name: ['John', [Validators.required, Validators.minLength(3)]],
       email: ['a@yushChalkegmail.com', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required,commonPasswordValidator]]
     });
   }
 
