@@ -1,0 +1,20 @@
+<div class="container border bg-primary m-2 p-2">
+    <form action="" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        <label for="Email"> Enter Email</label>
+        <input type="email" name="mail" id="mail" [(ngModel)]="user.email" required>
+
+        <br>
+
+        <label for="password">Enter the password</label>
+        <input type="password" name="password" [(ngModel)]="user.password" required>
+
+        <br>
+
+        <input type="submit" value="Submit" [disabled]="userForm.invalid">
+
+
+        <!-- <input type="submit" value="Submit" [disabled]="user.email && user.password ? false : true"> -->
+    </form>
+
+    <p>{{user.email}}{{user.password}}</p>
+</div>

@@ -1,0 +1,32 @@
+<div class="container border border-red bg-warning">
+    <form action="" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+        <label for="">Enter Name: </label>
+        <input type="text" name="Name" formControlName="name">
+
+        <div *ngIf="userForm.get('name') ?.invalid && userForm.get('name') ?.touched ">
+            <p *ngIf="userForm.get('name')?.errors?.['required']"> Please enter Name </p>
+            <p *ngIf="userForm.get('name')?.errors?.['minlength']">Name Should have minimum 3 length</p>
+        </div>
+
+        <br>
+        
+        <label for="">Enter Email: </label>
+        <input type="email" name="email" formControlName="email">
+        
+        <div *ngIf="userForm.get('email') ?.invalid && userForm.get('email') ?.touched ">
+            <p *ngIf="userForm.get('email')?.errors?.['required']"> Please enter Email </p>
+            <p *ngIf="userForm.get('email')?.errors?.['email']">Please Enter proper Email ID</p>
+        </div>
+
+        <br>
+        
+        <label for="">Enter Password: </label>
+        <input type="password" name="password" formControlName="password">
+        
+        <br>
+        
+        <input type="submit" [disabled]="userForm">
+    
+    </form>
+</div>

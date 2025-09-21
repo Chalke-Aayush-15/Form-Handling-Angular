@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FormHandling1 } from './Components/form-handling1/form-handling1';
+import { FormHandling2 } from './Components/form-handling2/form-handling2';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [FormHandling1, FormHandling2],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
